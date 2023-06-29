@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css">
+    
+    <title>Live Video Chat Application</title>
+    <script defer src="/node_modules/socket.io/client-dist/socket.io.min.js"></script>
+    <script defer src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script>
+    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/1.3.1/js/toastr.min.js"></script>
+    <script defer src="/jquery-3.5.1.min.js"></script>
+    <script defer src="/socket.io/socket.io.js"></script>
+    <script defer src="/script.js"></script>
+    <script defer src="https://smtpjs.com/v3/smtp.js"></script>
+</head>
+
+<body>
+    <div class="login" id="login-box">
+        <div id="logo"><img src="/pic/w2.png" alt="failed to load img" srcset=""></div>
+        <div id="logo1"><img src="/pic/boy.gif" alt="failed to load img" srcset=""></div>
+        <div id="sign_in">
+            <h6>sign in</h6>
+            <div id="sign-box">
+                <input id="first_name" name="Firstname" placeholder="Firstname">
+                <input id="login_name" name="username" placeholder="Username">
+                <input type="password" id="login_pass" name="password" placeholder="Password">
+                <span id="eye-img"><img src="/pic/eye.png" alt="failed"></span>
+                <span id="hidden-eye-img"><img src="/pic/hidden-eye.png" alt="failed"></span>
+                <button id="login_btn" onClick="login()" onsubmit="return validateForm()" value="submit">Login</button>
+                <div id="create-account">don't have an account? <span id="next-box" onclick="signUp()">create an
+                        account</span></div>
+            </div>
+        </div>
+        <div id="sign_up">
+            <button id="back-arrow" type="button" onclick="back()"><img src="/icons/back-arrow3.png"
+                    alt="failed"></button>
+                      <button id="back-otp" onclick="backOTP()"><img src="/icons/back-arrow3.png" alt="failed"></button>
+            <h5>sign up</h5>
+            <div id="otp-box">                
+                <div class="form-group">
+                    <label for="first_name" class="enter-otp">Please Enter Your OTP</label>
+                    <div class="col-md-9" id="fname">
+                        <input type="text" id="my-otp">
+                        <div id="show-otp-timer"></div>
+                    </div>
+                </div>
+                <button id="verify-otp" type="submit">verify</button>
+            </div>
+           
+            <form id="sign_up_form" name="myForm" onsubmit="return validateForm()" class="form-horizontal" role="form"
+                method="post" action="/" enctype="multipart/form-data">
+                <div class="form-group hidden1">
+                    <label for="first_name" class="col-md-3 control-label">First Name</label>
+                    <div class="col-md-9" id="fname">
+                        <input type="text" class="form-control fname" name="first_name" placeholder="Ex- Govind"
+                            required=""><i><span class="formerror"></span></i>
+                    </div>
+                </div>
+                <div class="form-group hidden2">
+                    <label for="last_name" class="col-md-3 control-label">Last Name</label>
+                    <div class="col-md-9" id="lname">
+                        <input type="text" class="form-control lname" name="last_name" placeholder="Ex- Pal"
+                            required=""><i><span class="formerror"></span></i>
+                    </div>
+                </div>
+                <div class="form-group hidden3">
+                    <label for="mob_no" class="col-md-3 control-label">Mobile Number</label>
+                    <div class="col-md-9" id="mob">
+                        <input type="number" class="form-control" name="mob_no" placeholder="Ex- 9837611734"
+                            required=""><i><span class="formerror"></span></i>
+                    </div>
+                </div>
+                <div class="form-group hidden9">
+                    <label for="mob_no" class="col-md-3 control-label">Gender</label>
+                    <div class="col-md-9" id="Gender">
+                        <label for="male"  class="col-md-2 control-label">Male</label>
+                        <input type="radio" name="gender" value="male">
+                        <label for="male"  class="col-md-2 control-label">Female</label>
+                        <input type="radio" name="gender" value="female">
+                        <label for="male"  class="col-md-2 control-label">Others</label>
+                        <input type="radio" name="gender" value="others">
+                    </div>
+                </div>
+                <div class="form-group hidden4">
+                    <label for="mob_no" class="col-md-3 control-label com-l">Profile Image <b><i>( jpg / png / jpeg
+                                only)</i></b></label>
+                    <div class="col-sm-9" id="image">
+                        <input class="form-control" id="uploaded_image" type="file" name="uploaded_image"
+                            onchange="return fileValidation()" required="" accept="" /><i><span
+                                class="formerror"></span></i>
+                    </div>
+                </div>
+                <div class="form-group hidden5">
+                    <label for="user_name" class="col-md-3 control-label">User Name</label>
+                    <div class="col-md-9" id="username">
+                        <input type="email" class="form-control username" name="user_name" placeholder="Ex- govind@gmail.com"
+                            required=""><i><span class="formerror"></span></i>
+                    </div>
+                </div>
+                <div class="form-group hidden6">
+                    <label for="password" class="col-md-3 control-label com-l">Password</label>
+                    <div class="col-md-9" id="pass">
+                        <input type="password" class="form-control pas" name="password" placeholder="Ex- govind@123"
+                            required=""><i><span class="formerror"></span></i>
+                    </div>
+                </div>
+                <div class="form-group hidden7">
+                    <label for="password" class="col-md-3 control-label com-l">Confirm Password</label>
+                    <div class="col-md-9" id="cpass">
+                        <input type="password" class="form-control" name="cpassword" placeholder="Ex- govind@123"
+                            required=""><i><span class="formerror"></span></i>
+                    </div>
+                </div>
+                <div class="form-group hidden8">
+                    <!-- Button -->
+                    <div class="col-md-offset-3 col-md-9">
+                        <button id="btn-signup" type="submit" value="submit">Register</button>
+                    </div>
+                </div>
+                <span id="p-eye-img"><img src="/pic/eye.png" alt="failed"></span>
+                <span id="p-hidden-eye-img"><img src="/pic/hidden-eye.png" alt="failed"></span>
+                <span id="cp-eye-img"><img src="/pic/eye.png" alt="failed"></span>
+                <span id="cp-hidden-eye-img"><img src="/pic/hidden-eye.png" alt="failed"></span>
+                <button id="send-otp" type="button" onclick="sendEmail()">Send OTP</button>
+            </form>
+        </div>
+
+
+        <!-- footer -->
+        <footer>
+            <div id="slide">Copyright &copy; Live vChat. All Rights Reserved</div>
+        </footer>
+    </div>
+
+
+    <!-- main box -->
+    <div id="main-box" class="row row-cols-2">
+        <div id="welcome"></div>
+        <h1 id="me"><span id="logout" onclick="logout()">Logout</span></h1>
+        <div class="left-container col" id="containered">
+
+            <!-- link for peer id -->
+            <div id="link"></div>
+
+            <!-- add-link button -->
+            <button class="add-link" id="add-link" onclick="myFunction2()"><img src="/icons/user.png"
+                    alt="failed to load image"></button>
+
+            <!-- for Audio enable and disable--->
+
+            <!-- unmute button -->
+            <button id="Disable-mute" onclick="unMute()"><img src="/icons/unmute.png" alt=""></button>
+
+            <!-- mute button -->
+            <button id="Enable-mute" onclick="mute()"><img src="/icons/mute.png" alt=""></button>
+
+
+            <!-- for Video enable and disable--->
+
+            <!-- disable video button -->
+            <button id="Disable-video" onclick="disable()"><img src="/icons/disable.png" alt=""></button>
+
+            <!-- enable video button  -->
+            <button id="Enable-video" onclick="enable()"><img src="/icons/enable2.png" alt=""></button>
+
+            <!-- put remote peer id  -->
+            <input type="text" id="peerID" placeholder="Put Peer Id First">
+
+            <!-- call button -->
+            <button id="call-peer"><img src="/icons/call.jpg" alt=""></button>
+
+            <!-- end-call button -->
+            <button id="end-call"><img src="/icons/end-call.png" alt=""></button>
+
+            <!-- share-screen button -->
+            <button id="share-screen"><img src="/icons/share-screen.png" alt=""></button>
+
+            <!-- unhide button for chat-box -->
+            <button id="unhide" onclick="unhide()"><img src="/icons/unhide.png" alt="" srcset=""></button>
+
+            <!-- hide button for chat-box -->
+            <button id="hide" onclick="hide()"><img src="/icons/hide.png" alt="" srcset=""></button>
+
+            <!-- container for video , chat-box , online-uesrs -->
+
+            <div id="video-container">
+
+                <!-- for show "connecting"...... --->
+                <h2 id="show-peer"></h2>
+
+                <div id="count-show"></div>
+            </div>
+        </div>
+        <div class="right-container col">
+            <div class="right-box-container" id="right-box-containered">
+
+                <div id="right-box">
+                    <div id="scroll" onclick="scrollBottom()"><img src="/icons/icon1.jpg" alt="failed to load image">
+                    </div>
+                </div>
+                <div class="chat-box">
+                    <form action="#" id="send-container">
+                        <textarea type="text" id="message-box" placeholder="public chat..."></textarea>
+                        <button type="submit" class="btn">send</button>
+                    </form>
+                </div>
+                <div id="private-box"></div>
+            </div>
+            <!-- after-login  -->
+            <div id="after-login">
+                <span id="online-users"></span>
+                <div id="user-list" class="user-list"></div>
+            </div>
+        </div>
+    </div>
+    <div id="end"><i>
+            <h4>can't open this site here</h4>
+        </i></div>
+</body>
+
+</html>

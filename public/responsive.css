@@ -1,0 +1,380 @@
+
+@media only screen and (max-width: 970px){
+
+    #content{
+        font-size: 18px;
+        top: 110px;
+        display: flex;
+        width: 150px;
+        left: 200px;
+        display: none;
+    }
+
+    .word{
+        padding: 0px;
+    }
+    .w1{
+        margin: 0px 10px;
+    }
+    .w2{
+        margin: 0px 0px;
+    }
+    .w3{
+        margin: 0px 6px;
+    }
+    .w4{
+        margin: 0px 4px;
+    }
+    .w5{
+        margin: 0px 10px;
+    }
+    #back-arrow{
+        height: 30px;
+        width: 30px;
+        border: 1px solid black;
+        position: absolute;
+        border-radius: 50%;
+        top: 4px;
+        left: 4px;
+        border: none;
+    }
+    #create-account{
+        font-size: 16px;
+    }
+    #sign_in{
+        width: 85%;
+        bottom: 20px;
+        right: 30px;
+        height: 70%;
+    }
+
+    #sign_up{
+        left: 10%;
+        bottom: 15px;
+        width: 80%;        
+    }
+
+    #logo{
+        height: 94px;
+        width: 95px;
+        top: 60px;
+    }
+    #logo1{
+        height: 65px;
+        width: 130px;
+        left: 6px;
+        top: 7px;
+    }
+     
+         #hide{
+            left: 78%;
+         }
+         #unhide{
+            left: 78%;
+         }
+         .left-container{
+             width: 50%;
+         }
+         #online-users{
+            font-size: 13px;
+         }
+         #user-list{
+            height: 95%;
+            top: 5%;
+         }
+         #me{
+             width: 50%;
+         }
+         .right-container{
+             width: 50%;
+         }
+         #video-container{
+            flex-direction: column;
+         }
+
+         #slide {
+            font-size: 16px;
+        }
+        #next-box{
+            cursor: pointer;
+        }
+        #right-box{
+            height: 85%;
+        }
+        .chat-box{
+            height: 15%;
+        }
+        #my-img{
+            height: 30px;
+            width: 35px;
+        }
+        #full-name{
+            margin: 0px -30px;
+        }
+        #logout{
+            bottom: 0px;
+        }
+        #send-otp{
+            bottom: 5px;
+        }
+        #peerID{
+            width: 260px;
+            bottom: 50px;
+        }
+        #call-peer{
+            height: 30px;
+            width: 40px;
+            bottom: 10px;
+            left: 2%;
+        }
+        #Enable-video{
+            bottom: 5px;
+            left: 21%;
+            height: 40px;
+            width: 45px;
+        }
+        #Disable-video{
+            bottom: 5px;
+            left: 21%;
+            height: 40px;
+            width: 45px;
+        }
+        #Disable-mute{
+            bottom: 12px;
+            left: 21%;
+            height: 40px;
+            width: 45px;
+        }
+        #Enable-mute{
+            bottom: 12px;
+            left: 21%;
+            height: 40px;
+            width: 45px;
+        }
+        #end-call{
+            bottom: 12px;
+            left: 60%;
+            height: 30px;
+            width: 40px;
+        }
+        #share-screen{
+            bottom: 12px;
+            right: 2px;
+            height: 30px;
+            width: 40px;
+        }
+
+}
+
+@media only screen and (max-width: 528px){
+    #logo{
+        height: 55px;
+        width: 55px;
+        top: 58px;
+    }
+    #logo1{
+        height: 50px;
+        width: 70px;
+        top: 20px;
+        left: 12px;
+    }
+    #content{
+        font-size: 8px;
+        font-size: 20px;
+        display: flex;
+        flex-direction: column;
+        top: 60px;
+        width: 100px;
+        left: 70px;
+        display: none;
+    }
+    .word{
+        padding: 0px;
+    }
+    .w1{
+        margin: 0px 10px;
+    }
+    .w2{
+        margin: 0px 45px;
+    }
+    .w3{
+        margin: 0px 25px;
+    }
+    .w4{
+        margin: 0px 28px;
+    }
+    .w5{
+        margin: 0px 0px;
+    }
+    #create-account{
+        font-size: 12px;
+    }
+    #next-box{
+        cursor: pointer;
+    }
+    #slide{
+        font-size: 8px;
+    }
+    #me{
+        width: 100%;
+    }
+    #online-users{
+        height: 8%;
+     }
+     #user-list{
+        height: 92%;
+        top: 8%;
+     }
+    #logout{
+        top: 0px;
+    }
+    #my-img{
+        height: 55px;
+        width: 65px;
+        margin: 0px 0px;
+    }
+    #full-name{
+        top: 0px;
+        margin: 20px 0px;
+    }
+    .right-container{
+        width: 100%;
+        height: 40%;
+        top: 10%;
+    }
+    .left-container{
+        width: 100%;
+        height: 50%;
+        top: 50%;
+    }
+    #right-box{
+        height: 85%;
+    }
+    .chat-box{
+        height: 15%;
+    }
+
+    #sign_in{
+        right: 28px;
+        bottom: 40px;
+    }
+    #sign_up {
+        width: 95%;
+        left: 5px;
+        bottom: 25px;
+    }
+    #back-arrow {
+        height: 25px;
+        width: 25px;
+        top: 4px;
+        left: 2px;
+    }
+    #send-container{
+        bottom: 8px;
+    }
+    #peerID{
+        width: 280px;
+        bottom: 50px;
+    }
+    #call-peer{
+        height: 30px;
+        width: 40px;
+        bottom: 10px;
+        left: 2%;
+    }
+    #Enable-video{
+        bottom: 5px;
+        left: 21%;
+        height: 40px;
+        width: 45px;
+    }
+    #Disable-video{
+        bottom: 5px;
+        left: 21%;
+        height: 40px;
+        width: 45px;
+    }
+    #Disable-mute{
+        bottom: 12px;
+        left: 21%;
+        height: 40px;
+        width: 45px;
+    }
+    #Enable-mute{
+        bottom: 12px;
+        left: 21%;
+        height: 40px;
+        width: 45px;
+    }
+    #end-call{
+        bottom: 12px;
+        left: 60%;
+        height: 30px;
+        width: 40px;
+    }
+    #share-screen{
+        bottom: 12px;
+        right: 2px;
+        height: 30px;
+        width: 40px;
+    }
+}
+
+@media only screen and (max-width: 282px){
+   #main-box{
+       visibility: hidden;
+       height: 0px;
+   }
+
+   #login-box{
+    display: none;
+}
+
+#end{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: capitalize;
+    height: 100vh;
+    width: 100vw;
+    background-color: red;
+    color: white;
+}
+
+#next-box{
+    cursor: pointer;
+}
+}
+
+/* responsive device bise */
+
+/*@media only screen and (max-width: 412px){
+    .right-container{
+        top: 96px;
+    }
+    #me{
+        height: 11%;
+    }
+    .left-container{
+        height: 49%;
+        top: 51%;
+    }
+} 
+@media only screen and (max-width: 883px){
+    .right-container{
+        top: 93px;
+        height: 77%;
+    }
+    #right-box{
+        height: 84%;
+    }
+    .chat-box{
+        height: 16%;
+    }
+    #send-container{
+        bottom: 4px;
+    }
+    #me{
+        height: 23%;
+    }
+}*/
