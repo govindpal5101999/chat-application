@@ -1,2 +1,2 @@
 # chat-application
-This application is developed for chat and online videochat.In this application new user have to register first with email and then OTP will go to that respected email id for authentication.
+This is a Web-application with video chat and real-time messaging capabilities.In order to use this application new user have to register first with email id and then OTP will go to that respected email id for authentication.
