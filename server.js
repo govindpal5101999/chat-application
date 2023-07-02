@@ -14,7 +14,7 @@ var mysql = require('mysql');
 
 var fileUpload = require('express-fileupload');
 
-const peerServer = require('Peer');
+// const peerServer = require('Peer');
 
 app.use(express.static('public'));
 

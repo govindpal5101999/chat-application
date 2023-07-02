@@ -1,0 +1,9 @@
+For setup this chat application follow the steps below:-
+1.install xampp server
+2.after installing xampp server run this command in terminal sudo /opt/lampp/lampp start then xampp server will start(for ubuntu)
+3.open pgadmin in your browser by typing localhost:8000/phpmyadmin
+4.download code from github and unzip it
+5.open to terminal in vscode one is for peer server and another is for nodejs
+6.run peer server by typing peerjs --port 9000
+7.run nodejs server by typing npm run dev
+8.open browser and type localhost:3000(current port)

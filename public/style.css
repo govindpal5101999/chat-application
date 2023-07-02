@@ -1714,15 +1714,14 @@ h6{
     left: 0px;
 }
 #send-otp{
-    display: none;
     height: 25px;
     width: 100px;
     border: 1px solid black;
     border-radius: 8px;
     cursor: pointer;
     font-size: 17px;
-    position: absolute;
-    bottom: 130px;
+    position: relative;
+    bottom: -50px;
     left: 0px;
 }
 #verify-otp{
