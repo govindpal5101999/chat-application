@@ -3,14 +3,14 @@ This is a Web-application with video chat and real-time messaging capabilities.I
 
 # Installation steps
 For setup this chat application follow the steps below:-
-1.install xampp server
-2.after installing xampp server run this command in terminal sudo /opt/lampp/lampp start then xampp server will start(for ubuntu)
-3.open pgadmin in your browser by typing localhost:8000/phpmyadmin
-4.download code from github and unzip it
-5.open to terminal in vscode one is for peer server and another is for nodejs
-6.run peer server by typing peerjs --port 9000
-7.run nodejs server by typing npm run dev
-8.open browser and type localhost:3000(current port)
+1.Install xampp server
+2.After installing xampp server run this command in terminal sudo /opt/lampp/lampp start then xampp server will start(for ubuntu)
+3.Open localhost:8000/phpmyadmin
+4.Download code from github and unzip it
+5.Run project in vscode and use two terminals one is for peer server and another for nodejs
+6.Run peer server with peerjs --port 9000
+7.Run nodejs server with npm run dev
+8.Open application in browser with localhost:3000(current port)
 
 # Output 
 SignUp Page
