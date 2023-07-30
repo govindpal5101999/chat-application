@@ -17,7 +17,8 @@ SignUp Page
 ![signUp](https://github.com/govindpal5101999/chat-application/assets/108825404/c1587bd6-93d1-4067-93e9-e5953dbda943)
 
 SignIn Page
-![signIn](https://github.com/govindpal5101999/chat-application/assets/108825404/eacc2a3c-e45b-4b9d-901b-426190baeda5)
+![login_page](https://github.com/govindpal5101999/chat-application/assets/108825404/2c9571ce-cd1a-4d11-bbe5-5fbb865ad6c1)
+
 
 After Login
 ![afterLogin](https://github.com/govindpal5101999/chat-application/assets/108825404/540eea66-c595-44c1-a023-4c6fb59a99c5)
