@@ -276,12 +276,11 @@ var userlist = [];
 function login() {
     let username = document.getElementById('login_name').value
     let password = document.getElementById('login_pass').value
-    let firstname = document.getElementById('first_name').value
-    socket.emit('new-user-joined', firstname);
+    
     $.ajax({
         type: "POST",
         url: "http://localhost:3000/login",
-        data: JSON.stringify({ "username": username, "password": password, "firstname": firstname }),
+        data: JSON.stringify({ "username": username, "password": password }),
         success: function (resp) {
             if (resp.status) {
                 document.getElementById('main-box').style.display = 'block'
@@ -289,6 +288,8 @@ function login() {
                 sessionStorage.setItem("user", JSON.stringify(resp.data));
                 document.getElementById('me').innerHTML += `<div id = "my-img" ><img src="/images/upload_images/${resp.data.image}" /></div><span id= "full-name">${resp.data.first_name}  ${resp.data.last_name}</span>`;
                 socket.emit('loggedin', resp.data);
+                socket.emit('new-user-joined', resp.data.first_name);
+            
             } else {
                 alert('Invalid Credentials....!')
             }

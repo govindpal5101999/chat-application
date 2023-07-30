@@ -1501,7 +1501,7 @@ footer{
     position: absolute;
     filter: invert;
     border-radius: 50%;
-    top: 90px;
+    top: 60px;
     right: 4px;
     display: block;
     cursor: pointer;
@@ -1525,7 +1525,7 @@ footer{
     position: absolute;
     filter: invert;
     border-radius: 50%;
-    top: 90px;
+    top: 60px;
     right: 4px;
     display: none;
     cursor: pointer;
@@ -1697,7 +1697,7 @@ h6{
 }
 
 #sign-box{
-    height: 84%;
+    height: 65%;
     width: 90%;
     /* border: 1px solid black; */
     border-radius: 25px;

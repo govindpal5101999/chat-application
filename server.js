@@ -91,7 +91,7 @@ app.post('/login', (req, res) => {
     password = req.body.password
     firstname = req.body.firstname
 
-    connection.query("SELECT * FROM users_data WHERE first_name = '" + firstname + "' AND user_name = '" + username + "' AND password = '" + password + "'", function (error, results) {
+    connection.query("SELECT * FROM users_data WHERE user_name = '" + username + "' AND password = '" + password + "'", function (error, results) {
         if (error) throw error;
 
         if (results.length == 1) {
