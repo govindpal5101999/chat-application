@@ -1,3 +1,5 @@
+
+
 let myStream;
 var currentPeer;
 var peerList = [];
@@ -869,3 +871,13 @@ function logout() {
     }
 }
 /************************************************************************ Public-chat-End ************************************************************************************/
+
+
+// Setup and start animation!
+
+    var typed = new Typed('#element', {
+        strings: ['VideoConference Application', 'Live Public Chat', 'Private Chat'],
+        typeSpeed: 150,
+        backSpeed: 150,
+        loop: true
+    })
